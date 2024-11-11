@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    {% include 'carrusel.html' %}
+
+    {% include 'presentacion.html' %}
+
+    <style>
+        #tituloP{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-custom {
+            background-color: #ca8d4b;
+            border-color: #ca8d4b;
+            padding: 2px 8px; 
+            font-size: 12px;  
+        }
+        .btn-custom:hover {
+            background-color: #b87b3f; 
+            border-color: #b87b3f;
+        }
+
+        .btn-custom-container {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <div>
+        <h1 id="tituloP">Productos Disponibles:</h1>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            {% for flan in flanes %}
+            <div class="col-md-4 mb-4">
+                <div class="card" style="height: 100%;">
+                    <img src="{{ flan.img_url }}" class="card-img-top" alt="{{ flan.name }}">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ flan.name }}</h5>
+                        <p class="card-text flex-grow-1">{{ flan.descripcion }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{% url 'secret' %}" class="btn btn-custom text-white btn-sm">_</a>
+    
+
+{% endblock %}

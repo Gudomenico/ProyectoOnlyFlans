@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% include 'carrusel.html' %}
+
+    <!-- Sección: Quiénes somos - A la derecha con imagen circular más pequeña -->
+    <div class="container my-5" id="present">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg" style="background-color: #ca8d4b; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+                    <div class="card-body">
+                        <h5 class="card-title text-white mb-4">¿Quiénes somos?</h5>
+                        <p class="card-text text-dark">
+                            En <strong>OnlyFlans</strong>, somos un equipo apasionado por la gastronomía y el arte de la repostería. Nuestro objetivo es ofrecer los flanes más deliciosos y variados, utilizando solo ingredientes de la más alta calidad. Creemos que cada bocado debe ser una experiencia única, por eso nos esforzamos en crear flanes que no solo sean exquisitos, sino también visualmente atractivos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static 'img/quienes.png' %}" alt="Quienes somos" class="img-fluid rounded-circle shadow-sm" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección: Misión - A la izquierda con imagen circular más pequeña -->
+    <div class="container my-5" id="present">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <img src="{% static 'img/mision.png' %}" alt="Misión" class="img-fluid rounded-circle shadow-sm" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-lg" style="background-color: #ca8d4b; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+                    <div class="card-body">
+                        <h5 class="card-title text-white mb-4">Misión</h5>
+                        <p class="card-text text-dark">
+                            Nuestra misión es deleitar a nuestros clientes con una variedad de flanes que combinen sabores tradicionales y contemporáneos. Queremos ser la primera elección para quienes buscan un postre exquisito y satisfactorio. Nos comprometemos a mantener la calidad, la innovación y la satisfacción del cliente en el corazón de todo lo que hacemos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección: Opiniones - A la derecha con imagen circular más pequeña -->
+    <div class="container my-5" id="present">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg" style="background-color: #ca8d4b; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+                    <div class="card-body">
+                        <h5 class="card-title text-white mb-4">Opiniones</h5>
+                        <p class="card-text text-dark">
+                            "¡El mejor flan que he probado! La textura es perfecta y el sabor es inigualable." <br>
+                            <em>- <strong>María G.</strong></em>
+                            <br><br>
+                            "Los flanes de OnlyFlans siempre son el centro de atención en mis reuniones familiares. ¡Todos los aman!" <br>
+                            <em>- <strong>Carlos R.</strong></em>
+                            <br><br>
+                            "Me encanta la variedad que ofrecen. Cada sabor es un nuevo descubrimiento." <br>
+                            <em>- <strong>Laura T.</strong></em>
+                            <br><br>
+                            <strong>Cuenta: Flantastico 123flan</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static 'img/opinion.png' %}" alt="Opiniones" class="img-fluid rounded-circle shadow-sm" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+
+<style>
+    .navbar-custom {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        height: 60px; 
+    }
+    .navbar-custom img {
+        max-height: 60px; 
+        width: auto; 
+        margin-top: 10px; 
+    }
+
+    #colorA {
+        background-color: 	#ca8d4b;
+        border-radius: 15px;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+    <div class="container-fluid" id="colorA">
+        <a href="/" style="padding: 0;">
+            <img src="{% static 'img/logo.png' %}" alt="OnlyFlans Logo">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bienvenido/">Inicio</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+            {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/acerca/">Quienes somos</a>
+                </li>
+                {% if user.is_authenticated and user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/secret/">Locales</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacto/">Contacto</a>
+                </li>
+                
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cierre_sesion/">LogOut</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/inicio_sesion/">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registro/">SignUp</a>
+                    </li>
+                {% endif %}
+                {% if user.is_authenticated and user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/">Panel de administrador</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
